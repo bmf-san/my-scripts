@@ -7,10 +7,10 @@ if ! /var/www/ssl-proof/rancher/.well-known/certbot-auto renew --force-renew ; t
 sleep 15
 
 # Slack Title
-TITLE=${TITLE:-"Let's Encrypt更新エラー通知"}
+TITLE=${TITLE:-"[FAILED] Let's Encrypt SSL"}
 
 # Slack Message
-MESSAGE=${MESSAGE:-"証明書の更新に失敗しました。"}
+MESSAGE=${MESSAGE:-"SSL has not updated."}
 
 #POST
 curl -s -S -X POST --data-urlencode "payload={
@@ -27,10 +27,10 @@ else
 sleep 15
 
 # Slack Title
-TITLE=${TITLE:-"Let's Encrypt更新完了通知"}
+TITLE=${TITLE:-"Let's Encrypt SSL"}
 
 # Slack Message
-MESSAGE=${MESSAGE:-"証明書を更新しました！"}
+MESSAGE=${MESSAGE:-"SSL has updated."}
 
 #POST
 curl -s -S -X POST --data-urlencode "payload={
